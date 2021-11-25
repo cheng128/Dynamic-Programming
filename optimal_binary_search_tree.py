@@ -13,7 +13,7 @@ OBST(p, q, n)
             j = i + l - 1
             w[i, j] = w[i, j-1] + p[j] + q[j]
             s[i, j] = inf
-            for k = i+1 to j
+            for k = i to j
                 t = s[i, k-1] + s[k+1, j] + w[i, j]
                 if t < s[i, j]
                     s[i, j] = t
@@ -36,7 +36,7 @@ def OBST(p, q, n):
             j = i + l - 1
             w[i][j] = round(w[i][j-1] + p[j] + q[j], 3)
             s[i][j] = round(s[i][i-1] + s[i+1][j] + w[i][j], 3)
-            for r in range(i+1, j+1):
+            for r in range(i, j+1):
                 t = s[i][r-1] + s[r+1][j] + w[i][j]
                 if t < s[i][j]:
                     s[i][j] = round(t, 3)
