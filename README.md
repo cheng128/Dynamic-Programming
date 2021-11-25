@@ -5,4 +5,5 @@ Implemented in Python with pseudo code
 - Fractional knapsack problem  
 - 0-1 knapsack problem  
 - Matrix chain multiplication problem  
-- Longest common subsequence problem  
+- Longest common subsequence problem
+- Optimal binary search tree problem  
