@@ -2,25 +2,26 @@
 
 OBST(p, q, n)
 
-    Let s[1...n+1, 0...n], w[1...n+1, 0...n] be new arrays
+    Let e[1...n+1, 0...n], w[1...n+1, 0...n] and root[1...n, 1...n] be new arrays
     
     for i = 1 to n+1
+        e[i, i-1] = q[i-1]
         w[i, i-1] = q[i-1]
-        s[i, i-1] = q[i-1]
-    
-    for l = 2 to n
+        
+    for l = 1 to n
         for i = 1 to n - l + 1
             j = i + l - 1
+            e[i, j] = inf
             w[i, j] = w[i, j-1] + p[j] + q[j]
-            s[i, j] = inf
-            for k = i to j
-                t = s[i, k-1] + s[k+1, j] + w[i, j]
-                if t < s[i, j]
-                    s[i, j] = t
-    return s[1, n]
+            for r = i to j
+                t = e[i, r-1] + e[r+1, j] + w[i, j]
+                if t < e[i, j]
+                    e[i, j] = t
+                    root[i, j] = r
+    return e and root
 """
 
-# TODO use a matrix to record split point and reconstruct the optimal binary tree
+# TODO: record "root" and reconstruct the optimal binary tree
 
 def OBST(p, q, n):
     
@@ -40,7 +41,7 @@ def OBST(p, q, n):
                 t = s[i][r-1] + s[r+1][j] + w[i][j]
                 if t < s[i][j]:
                     s[i][j] = round(t, 3)
-    return s[1][n]
+    return s
 
 def main():
     p = [0, 0.15, 0.1, 0.05, 0.1, 0.2]
@@ -48,8 +49,8 @@ def main():
     
     # because first item in p is a dummy value
     n = len(p) - 1 
-    answer = OBST(p, q, n) 
-    print('answer:', answer)
+    s = OBST(p, q, n) 
+    print('answer:', s[1][n])
 
 if __name__ == '__main__':
     main()
