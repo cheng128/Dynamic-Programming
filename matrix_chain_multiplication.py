@@ -8,6 +8,7 @@ p[n-1] = #column of matrix n-2 and #row of matrix n
 p[n] = #column of matrix n
 
 MATRIX_CHAIN(p)
+    n = p.length - 1
     Let s[1...n, 1...n] c[1...n-1, 2...n] be new arrays
 
     for l = 2 to n
