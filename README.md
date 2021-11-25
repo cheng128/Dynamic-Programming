@@ -6,4 +6,5 @@ Implemented in Python with pseudo code
 - 0-1 knapsack problem  
 - Matrix chain multiplication problem  
 - Longest common subsequence problem
+- Maximum sum increasing subsequence problem
 - Optimal binary search tree problem  
