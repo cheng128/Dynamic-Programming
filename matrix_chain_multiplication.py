@@ -10,7 +10,10 @@ p[n] = #column of matrix n
 MATRIX_CHAIN(p)
     n = p.length - 1
     Let s[1...n, 1...n] c[1...n-1, 2...n] be new arrays
-
+    
+    for i = 1 to n
+        s[i, i] = 0
+    
     for l = 2 to n
         for i = 1 to n - l + 1
             j = i + l - 1
