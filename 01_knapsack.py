@@ -1,7 +1,7 @@
 """ pseudo code
 Time Complexity: O(nW)
 
-Let arr[1..n][1..2] be a array that contain value and weight of n items
+Let arr[1...n][1..2] be a array that contain value and weight of n items
 W be the maximum total weight we can carry
 
 ZERO_ONE_KNAPSACK(arr, W)
@@ -22,7 +22,7 @@ ZERO_ONE_KNAPSACK(arr, W)
 def zero_one_knapsack(arr, W):
     # S will be used to save the largest value we can get
     # when we limit the weight with k we can carry and 
-    # we can only choose from thefirst item to ith item
+    # we can only choose from the first item to ith item
     S = [[0 for i in range(W+1)] for j in range(len(arr)+1)]
     
     for i in range(1, len(arr)+1):
