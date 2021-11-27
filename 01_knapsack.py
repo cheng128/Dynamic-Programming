@@ -1,4 +1,5 @@
 """ pseudo code
+Time Complexity: O(nW)
 
 Let arr[1..n][1..2] be a array that contain value and weight of n items
 W be the maximum total weight we can carry
